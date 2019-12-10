@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
 
         }
+        Toast.makeText(this,randomInt.toString(),Toast.LENGTH_SHORT).show()
         diceImage.setImageResource(drawableResourc)
 
     }
