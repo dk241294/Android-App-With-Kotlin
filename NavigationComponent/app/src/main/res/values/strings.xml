@@ -6,4 +6,5 @@
     <string name="Transaction">View transactions</string>
     <string name="Balance">View balance</string>
     <string name="send">Send money</string>
+    <string name="cancel">cancel</string>
 </resources>
