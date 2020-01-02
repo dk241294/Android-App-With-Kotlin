@@ -43,7 +43,12 @@ class GameFragment : Fragment() {
         /**
          * Called when the game is finished
          */
-//       ,
+        fun gameFinished() {
+            
+            val currentScore = viewModel.score.value ?: 0
+            val action = GameFragmentDirections.actionGameToScore(currentScore)
+            findNavController(this).navigate(action)
+        }
 
 
         binding.correctButton.setOnClickListener {
@@ -54,10 +59,12 @@ class GameFragment : Fragment() {
             viewModel.onSkip()
 
         }
+
         /** Setting up LiveData observation relationship **/
         viewModel.word.observe(this, Observer { newWord ->
             binding.wordText.text = newWord
         })
+
 
         viewModel.score.observe(this, Observer { newScore ->
             binding.scoreText.text = newScore.toString()
